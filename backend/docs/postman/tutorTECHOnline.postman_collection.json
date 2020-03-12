@@ -1,0 +1,986 @@
+{
+	"info": {
+		"_postman_id": "9e8da8c9-9da4-4863-91a8-b170ca51795c",
+		"name": "tutorTECHOnline",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "account",
+			"item": [
+				{
+					"name": "create account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"Expert\",\n\t\"email\": \"expert@yopmail.com\",\n\t\"password\": \"YourPassword\",\n\t\"role\": \"Expert\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/accounts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change password",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"password\": \"MyPassword\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/accounts/password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"accounts",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cheange username",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userName\": \"Usuario2\" \n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/accounts/username",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"accounts",
+								"username"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "answer",
+			"item": [
+				{
+					"name": "create answer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "242cb486-d905-4825-9f2d-3e29cd46c0d8",
+								"exec": [
+									"",
+									"pm.environment.set(\"answerId\", pm.response.json().answerId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"content\": \"It's very easy! You just need to put this line in the Tests part of the login request: pm.environment.set(accessToken, pm.response.json().accessToken)\",\n\t\"ratings\": []\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/questions/{{questionId}}/answers",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"questions",
+								"{{questionId}}",
+								"answers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete answer",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/questions/{{questionId}}/answers/{{answerId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"questions",
+								"{{questionId}}",
+								"answers",
+								"{{answerId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get answer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/answers/{{answerId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"{{answerId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get answers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/answers",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"answers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update answer",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"content\": \"It's very easy! You just need to put this line in the Tests part of the login request: pm.environment.set(accessToken, pm.response.json().accessToken). Edit: I hope it's useful for you!\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/questions/{{questionId}}/answers/{{answerId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"questions",
+								"{{questionId}}",
+								"answers",
+								"{{answerId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "login",
+			"item": [
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "53b519c1-748e-4300-9fe2-556ed10d4128",
+								"exec": [
+									"",
+									"pm.environment.set(\"accessToken\", pm.response.json().accessToken);",
+									"",
+									"pm.environment.set(\"userId\", pm.response.json().userId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"user@yopmail.com\",\n\t\"password\": \"YourPassword\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "question",
+			"item": [
+				{
+					"name": "add tag to question",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"tag\": \"\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/questions/{{questionId}}/tags",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"questions",
+								"{{questionId}}",
+								"tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create question",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2bdfb987-0c8b-4135-9564-757ce86f04a9",
+								"exec": [
+									"",
+									"pm.environment.set(\"questionId\", pm.response.json().questionId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"How can I set a token variable in postman?\",\n\t\"content\": \"Sorry to ask but i really am desesperate to know how to do this, please, help me!\",\n\t\"tags\": [],\n\t\"answers\": []\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/questions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"questions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete question",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/questions/{{questionId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"questions",
+								"{{questionId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete tag from question",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/questions/{{questionId}}/tags/{{tagId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"questions",
+								"{{questionId}}",
+								"tags",
+								"{{tagId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get question",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/questions/{{questionId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"questions",
+								"{{questionId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get questions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/questions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"questions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update question",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"How can I set a token variable in postman?\",\n\t\"content\": \"Sorry to ask but i really am desesperate to now how to do this, please, help me! Edit: Please, i am really desesperate, my boss is gonna fire me!\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/questions/{{questionId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"questions",
+								"{{questionId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "rating",
+			"item": [
+				{
+					"name": "create rating",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "01343349-e575-4db0-b0c8-8f6be66fb641",
+								"exec": [
+									"",
+									"pm.environment.set(\"ratingId\", pm.response.json().ratingId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"rating\": \"3.5\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/answers/{{answerId}}/ratings",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"{{answerId}}",
+								"ratings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete rating",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/answers/{{answerId}}/ratings/{{ratingId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"{{answerId}}",
+								"ratings",
+								"{{ratingId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get rating",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/ratings/{{ratingId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"ratings",
+								"{{ratingId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get ratings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/ratings",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"ratings"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "tag",
+			"item": [
+				{
+					"name": "create tag",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0c9ecd2d-29cc-41fd-ac57-58f8174f006b",
+								"exec": [
+									"",
+									"pm.environment.set(\"tagId\", pm.response.json().tagId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"tag\": \"Backend\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/tags",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete tag",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/tags/{{tagId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"tags",
+								"{{tagId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get questions by tag",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/tags/ {{tagId}}/questions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"tags",
+								" {{tagId}}",
+								"questions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get tag",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/tags/{{tagId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"tags",
+								"{{tagId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get tags",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/tags",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update tag",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"tag\": \"Frontend\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/tags/{{tagId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"tags",
+								"{{tagId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "avatarUrl",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"name": "Content-Type",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/media/hab50/TOSHIBA EXT/Documentos/Programación/Hack-a-Boss/Proxectos/TutorTECHOnline/tutorTECHOnline/backend/docs/josemato.jpeg"
+								},
+								{
+									"key": "title",
+									"value": "Experto",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/users/avatar",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get answers by user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/users/{{userId}}/answers",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{userId}}",
+								"answers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get questions by user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/users/{{userId}}/questions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{userId}}",
+								"questions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get ratings by user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/users/{{userId}}/ratings",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{userId}}",
+								"ratings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/users/{{userId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

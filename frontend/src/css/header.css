@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron:400,500,700|Space+Mono:400,400i,700&display=swap');
+
+:root {
+    --dark: #1c3041;
+    --bright: #ebeafb;
+    --green: #16dca2;
+    --red: #89043d;
+    --blue: #67ece7;
+  }
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    top: 0;
+    width: 100%;
+    padding: 1rem;
+    background: black;
+    font-family: "Orbitron", sans-serif;
+    min-height: calc (100vh - 100px);
+    height: 100px;
+    border-bottom: .1em solid var(--green);
+}
+
+header .general {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 5rem;
+}
+
+header .priv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+}
+
+.header img {
+    margin:0 1rem;
+}
+
+.header-item {
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 3rem;
+    flex-grow: 1;
+    text-align: center;
+}
+
+a:link, a:visited, a:active {
+    text-decoration:none;
+    color: white;
+}
+
+a:hover {
+    color: var(--green);
+}
+
+.header-quest {
+    font-size: 25px;
+    margin: 0 1.5rem;
+    background: var(--dark);
+    border-radius: 12px;
+}
+
+.header-quest a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.header-quest a img {
+    margin-right: 0;
+}
+
+.header-reg {
+    font-size: 25px;
+    margin: 0 1.5rem;
+}
+
+.header-log {
+    padding: 0;
+    display: flex;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: black;
+    font-size: 35px;
+    border: 3px solid white;
+    margin: 0 1rem;
+}
+
+
+.header-logOut {
+    padding: 0;
+    display: flex;
+    color: var(--green);
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 35px;
+    margin: 0 2rem;
+}
+
+.header-account {
+    font-size: 25px;
+    margin: 0 2rem;
+}

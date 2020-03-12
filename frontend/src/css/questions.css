@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron:400,500,700|Space+Mono:400,400i,700&display=swap');
+
+:root {
+    --ultradark: #121f2a;
+    --dark: #1c3041;
+    --bright: #ebeafb;
+    --green: #16dca2;
+    --red: #89043d;
+    --blue: #67ece7;
+  }
+
+  #Question .MainpageGroup {
+      padding-top: 2rem;
+  }
+
+  #Tag .MainpageGroup {
+      padding-top: 2rem;
+  }
+
+.date {
+    font-weight: bold;
+}
+
+hr .line {
+    border: 0;
+    height: 2px;
+    text-align: center;
+    background-image: linear-gradient(left,var(--red),#000,var(--red));
+}
+
+p {
+    font-size: 25px;
+    color: var(--bright);
+    font-family: 'Orbitron', sans-serif;
+}
+
+.info > div > a {
+    font-size: 25px;
+    color: var(--bright);
+    font-weight: bold;
+    font-style: italic;
+    font-family: 'Orbitron', sans-serif;
+    margin: 1rem;
+}
+
+h5 {
+    text-align: center;
+}
+
+.overflow-hidden button {
+    font-size: 20px;
+    border-color: var(--green);
+    background-color: var(--red);
+    margin: 0.5rem;
+    border-radius: 50px;
+}
+
+.questions {
+    min-width: 145vh;
+    list-style: none;
+    padding: 0rem 3rem;
+    margin: 0;
+    display: inline-block;
+    border: 3px solid var(--red);
+    border-radius: 5px;
+    background-color: var(--ultradark);
+    position: relative;
+    box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+}
+
+form {
+    background: #797676;
+}
+
+.container {
+    margin: 3rem;
+    color: var(--bright);
+}
+
+.container button {
+    font-size: 20px;
+    border-color: var(--green);
+    background-color: var(--red);
+    margin: 0.5rem;
+    border-radius: 50px;
+    box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+}
+
+.container .primary:hover {
+    font-size: 20px;
+    border-color: var(--dark);
+    background-color: var(--red);
+    border-radius: 3px;
+    color: #ebeafb;
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    padding: 10px 25px;
+    margin: 1rem;
+    box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+
+}
+
+.container button:hover {
+    font-size: 20px;
+    border-color: var(--red);
+    background-color: var(--dark);
+    margin: 0.5rem;
+    border-radius: 50px;
+    box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+}
+
+.container .buttons button {
+    font-size: 20px;
+    background-color: var(--dark);
+}
+
+.container .buttons button:hover {
+    font-size: 20px;
+    background-color: var(--red);
+    border-color: var(--bright);
+}
+
+.container .text-title {
+    font-size: 30px;
+    color: var(--bright);
+    text-decoration: underline;
+    margin: 0.5rem;
+}
+
+.container .info {
+    display: flex;
+    flex: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.container .info div:first-child {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 50%;
+}
+
+.container .info div img {
+    border: 1px solid #89043d;
+    border-radius: 100%;
+    width: 15%;
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--bright);
+}
+
+.container .info div p{
+    padding: 0 1rem;
+}
+
+.container .info div:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.container .info div span {
+    margin-left: auto;
+}
+
+#edit {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.editor-toolbar button {
+    color: var(--bright);
+}
+
+.editor-toolbar button:hover {
+    color: black;
+}
+
+.css-26l3qy-menu {
+    margin-bottom: 3rem !important;
+}
+
+.CodeMirror,
+.CodeMirror-scroll {
+    max-height: 300px;
+}

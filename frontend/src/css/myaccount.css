@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron:400,500,700|Space+Mono:400,400i,700&display=swap');
+
+* {
+box-sizing: border-box;
+}
+
+main#user {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main#tag {
+    min-height: 100vh;
+}
+
+.userData {
+    flex-grow: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userBody {
+background-color: #1c3041;
+color: #ebeafb;
+font-family: "Orbitron", sans-serif;
+min-height: 100%;
+padding-top: 2rem;
+padding-bottom: 2rem;
+flex-grow: 2;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.userBody h3 {
+margin: 20px 0;
+}
+
+.userBody p {
+font-size: 20px;
+line-height: 21px;
+}
+
+.userBody .card-container {
+background-color: var(--ultradark);
+border: 3px solid var(--red);
+border-radius: 5px;
+box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+color: var(--green);
+position: relative;
+width: 600px;
+max-width: 100%;
+text-align: center;
+margin: 0 0 2rem 0;
+}
+
+.userBody .user-container {
+background-color: var(--ultradark);
+border: 3px solid var(--red);
+border-radius: 5px;
+box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+color: var(--green);
+position: relative;
+width: 600px;
+max-width: 100%;
+text-align: center;
+margin: 5rem 0;
+}
+
+.userBody .round {
+border: 1px solid var(--bright);
+border-radius: 100%;
+width: 50%;
+margin-top: 2rem;
+}
+
+button.primary {
+background-color: #1c3041;
+border: 3px solid #89043d;
+border-radius: 3px;
+color: #ebeafb;
+font-family: "Lato", sans-serif;
+font-weight: bold;
+padding: 10px 25px;
+margin: 1rem;
+box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+}
+
+button.primary:hover {
+background-color: #89043d;
+color: #16dca2;
+border: 3px solid var(--green);
+}
+
+.expertwannabe {
+    margin: 1rem;
+}
+
+.expertwannabe a {
+    text-decoration: underline;
+}
+
