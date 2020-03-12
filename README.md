@@ -1,7 +1,7 @@
 # tutorTECHOnline
 Portal web para consultas de programación específicas. Profesionales de cada tecnología responden a las consultas de manera personalizada. La plataforma permite: 
 
-• EXPERTOS:
+• EXPERTOS:       
 ◦ Registro y gestión del perfil     
 ◦ Responder a consultas de los usuarios (incluyendo etiquetas de tecnologías, ej: JavaScript, NodeJS, ...)      
 
